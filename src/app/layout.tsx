@@ -19,17 +19,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background font-sans antialiased",
+      <body className={cn("bg-background font-sans antialiased",
         fontSans.variable)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange>
-          <Header />
-          {children}
+          <main className="container mx-auto py-10 flex flex-col items-center justify-between">
+            <Header />
+            {children}
+          </main>
         </ThemeProvider>
       </body>
-    </html>
+    </html >
   );
 }
